@@ -26,7 +26,7 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
@@ -39,6 +39,11 @@ gem 'hirb'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+group :production do
+  gem 'pg' 
+  gem 'rails_12factor' 
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
